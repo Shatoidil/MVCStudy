@@ -1,0 +1,9 @@
+﻿@using Test4.Models
+@model IEnumerable<Test4.Models.People>
+@{
+    Layout = null;
+}
+@foreach (var person in Model)
+{
+    <tr><td>@person.SecondName</td><td>@person.Name</td><td class="sex">@person.Sex</td></tr>
+}
