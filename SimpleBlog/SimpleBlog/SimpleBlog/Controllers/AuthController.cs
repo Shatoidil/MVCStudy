@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleBlog.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,18 @@ namespace SimpleBlog.Controllers
 {
     public class AuthController : Controller
     {
-        // GET: Auth
+
+        [HttpGet]
         public ActionResult Login()
+        {
+            return View(new AuthLogin {
+                Test = "Это храниться в Тесте"
+            }
+            );
+        }
+
+        [HttpPost]
+        public ActionResult Login(AuthLogin form)
         {
             return View();
         }
