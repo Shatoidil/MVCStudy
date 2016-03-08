@@ -13,16 +13,15 @@ namespace SimpleBlog.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View(new AuthLogin {
-                Test = "Это храниться в Тесте при Гет"
-            });
+            return View();
         }
 
         [HttpPost]
         public ActionResult Login(AuthLogin form)
         {
-            form.Test = "Это храниться при Post";
-            return View(form);
+            if (!ModelState.IsValid)
+                return View(form);
+            return Content("The form is valid");
         }
     }
 }
