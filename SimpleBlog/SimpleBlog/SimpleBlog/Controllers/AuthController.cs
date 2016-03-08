@@ -14,15 +14,15 @@ namespace SimpleBlog.Controllers
         public ActionResult Login()
         {
             return View(new AuthLogin {
-                Test = "Это храниться в Тесте"
-            }
-            );
+                Test = "Это храниться в Тесте при Гет"
+            });
         }
 
         [HttpPost]
         public ActionResult Login(AuthLogin form)
         {
-            return View();
+            form.Test = "Это храниться при Post";
+            return View(form);
         }
     }
 }
