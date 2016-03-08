@@ -11,7 +11,11 @@ namespace SimpleBlog.Controllers
     public class AuthController : Controller
     {
 
-
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToRoute("home");
+        }
         public ActionResult Login()
         {
             return View(new AuthLogin
