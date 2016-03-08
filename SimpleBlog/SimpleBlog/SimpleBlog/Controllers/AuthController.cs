@@ -21,6 +21,11 @@ namespace SimpleBlog.Controllers
         {
             if (!ModelState.IsValid)
                 return View(form);
+            if(form.Username != "Loh")
+            {
+                ModelState.AddModelError("Username", "Username or password isn`t 20% cooler.");
+                return View(form);
+            }
             return Content("The form is valid");
         }
     }
