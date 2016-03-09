@@ -1,4 +1,4 @@
-﻿
+﻿@using System.Web.Optimization;
 @{
     Layout = null;
 }
@@ -10,11 +10,13 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title - SimpleBlog</title>
     <meta name="description" content="The description of my page" />
+    @Styles.Render("~/styles")
 </head>
 <body>
     <header>
         <h1>
          <a href="@Url.RouteUrl("home")">Simple Blog</a>
+            <i class="glyphicon glyphicon-bell"></i>
         </h1>
         @if (User.Identity.IsAuthenticated)
         {
@@ -34,6 +36,7 @@
     <footer>
         &copy; @DateTime.Now.Year - ShatoWeb
     </footer>
+    @Scripts.Render("~/scripts")
     @RenderSection("Scripts", false)
 </body>
 </html>
